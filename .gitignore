@@ -82,9 +82,10 @@ web_modules/
 .next
 out
 
-# Nuxt.js build / generate output
-.nuxt
-dist
+# Build output — never commit these
+client/build/
+client/dist/
+dist/
 
 # Gatsby files
 .cache/
