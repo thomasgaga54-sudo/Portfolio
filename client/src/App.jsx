@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ReviewsSection from "./ReviewsSection";
+import MusicPlayer from "./MusicPlayer";
 
 const fallbackProjects = [
   {
@@ -193,6 +194,7 @@ export default function App() {
 
   return (
     <>
+      <MusicPlayer />
       {lightbox && (
         <div className="lightbox" onClick={() => setLightbox(null)}>
           <button className="lightbox-close">✕</button>
