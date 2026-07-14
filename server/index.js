@@ -7,7 +7,7 @@ const helmet = require("helmet");
 const { Resend } = require("resend");
 
 const app = express();
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({ origin: function(o,cb){ cb(null,true); }, methods:["GET","POST"], credentials:true }));
