@@ -4,89 +4,66 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const helmet = require("helmet");
+const { Resend } = require("resend");
 
 const app = express();
-app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:5000", "null", process.env.CLIENT_URL].filter(Boolean),
-  methods: ["GET", "POST"],
-  credentials: true
-}));
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Serve static frontend
-app.use(express.static(require("path").join(__dirname, "../client/public")));
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(cors({ origin: function(o,cb){ cb(null,true); }, methods:["GET","POST"], credentials:true }));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/portfolio")
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB connection error:", err.message));
+  .catch(err => console.error("MongoDB error:", err.message));
 
-const Project = mongoose.model("Project", {
-  title: String,
-  description: String
+const Contact = mongoose.model("Contact", { name:String, email:String, message:String, createdAt:{type:Date,default:Date.now} });
+const Review = mongoose.model("Review", { name:String, rating:Number, comment:String, createdAt:{type:Date,default:Date.now} });
+const Project = mongoose.model("Project", { title:String, description:String, tags:[String], gallery:[{url:String,caption:String}], image:String, github:String, live:String });
+
+app.get("/api/reviews", async (req, res) => {
+  try { res.json(await Review.find().sort({ createdAt: -1 })); }
+  catch(err){ res.status(500).json({ message: err.message }); }
 });
 
-const Contact = mongoose.model("Contact", {
-  name: String,
-  email: String,
-  message: String
+app.post("/api/reviews", async (req, res) => {
+  const { name, rating, comment } = req.body;
+  if (!name||!rating||!comment) return res.status(400).json({ message:"All fields required" });
+  try { res.json(await Review.create({ name, rating, comment })); }
+  catch(err){ res.status(500).json({ message: err.message }); }
 });
 
 app.get("/api/projects", async (req, res) => {
-  const projects = await Project.find();
-  res.json(projects);
-});
-
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
-
-transporter.verify((err) => {
-  if (err) console.error("Email transporter error:", err.message);
-  else console.log("Email transporter ready");
+  try { res.json(await Project.find()); }
+  catch(err){ res.status(500).json({ message: err.message }); }
 });
 
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
-  if (!name || !email || !message) return res.status(400).json({ message: "All fields required" });
+  if (!name||!email||!message) return res.status(400).json({ message:"All fields required" });
+  try { await new Contact({ name, email, message }).save(); } catch(e){ console.error("DB:",e.message); }
   try {
-    // Save to DB (non-blocking — don't fail if DB is down)
-    new Contact({ name, email, message }).save().catch(err => console.error("DB save error:", err.message));
-
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+    const { error } = await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: [process.env.EMAIL_USER || "ejairuogaga@gmail.com"],
       replyTo: email,
-      subject: `New Portfolio Message from ${name}`,
-      html: `<p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong> ${message}</p>`
+      subject: "New Portfolio Message from " + name,
+      html: "<h2>New Message</h2><p><b>Name:</b> "+name+"</p><p><b>Email:</b> "+email+"</p><p><b>Message:</b> "+message+"</p>"
     });
-    res.json({ message: "Sent" });
-  } catch (err) {
-    console.error("Contact error:", err.message);
-    res.status(500).json({ message: err.message });
+    if (error){ console.error("Resend:",JSON.stringify(error)); return res.status(500).json({ message:"Email failed: "+error.message }); }
+    res.json({ message:"Sent" });
+  } catch(err){
+    console.error("Contact:",err.message);
+    res.status(500).json({ message:"Email failed: "+err.message });
   }
 });
 
-app.get("/api/seed", async (req, res) => {
-  await Project.create([
-    { title: "Agro E-commerce", description: "Online farm product store" },
-    { title: "Auth System", description: "JWT login system" },
-    { title: "Green Earth Initiative", description: "Eco gamification platform with tasks, rewards, and marketplace" }
-  ]);
-  res.send("Seeded");
+app.get("/health", (req, res) => {
+  res.json({ status:"ok", db: mongoose.connection.readyState===1?"connected":"disconnected", resendKey: process.env.RESEND_API_KEY?"set":"MISSING", emailTo: process.env.EMAIL_USER||"not set" });
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
-});
+app.get("*", (req, res) => { res.sendFile(path.join(__dirname, "../client/dist/index.html")); });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log("Server on port " + PORT));
