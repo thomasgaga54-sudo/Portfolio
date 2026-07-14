@@ -10,15 +10,15 @@ const fallbackProjects = [
     tags: ["React", "Node.js", "Express", "MongoDB", "E-commerce"],
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1488459716781-41ccceffe4d4?w=400&h=240&fit=crop",
-        caption: "Fresh farm produce"
+        url: "/Screenshot_20260714-201132.jpg",
+        caption: "Agro platform screenshot"
       },
       {
-        url: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&h=240&fit=crop",
-        caption: "Online marketplace for farmers"
+        url: "/Screenshot_20260714-201259.jpg",
+        caption: "Agro platform view"
       }
     ],
-    image: "/helen.png",
+    image: "/Screenshot_20260714-201132.jpg",
     github: "https://github.com/gaga477",
     live: "https://example.com"
   },
