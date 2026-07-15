@@ -935,3 +935,138 @@ footer {
   .music-btn { bottom: 16px; right: 16px; padding: 10px 14px; }
   .music-label { display: none; }
 }
+
+/* ── CASE STUDY MODAL ───────────────────────────────────────────────────── */
+.btn-case-study {
+  background: transparent;
+  color: #00d4ff;
+  border: 1px solid #00d4ff44;
+  padding: 4px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-case-study:hover { background: #00d4ff22; }
+
+.cs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.cs-modal {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 14px;
+  padding: 40px;
+  max-width: 760px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.cs-modal::-webkit-scrollbar { width: 4px; }
+.cs-modal::-webkit-scrollbar-thumb { background: #1e1e1e; border-radius: 4px; }
+
+.cs-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.cs-close:hover { color: #fff; }
+
+.cs-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.cs-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00d4ff;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.cs-section {
+  margin-bottom: 24px;
+}
+
+.cs-section h3 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #00d4ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cs-section p {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.cs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-list li {
+  color: #999;
+  font-size: 0.88rem;
+  padding-left: 14px;
+  position: relative;
+}
+
+.cs-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00d4ff;
+  font-size: 0.75rem;
+}
+
+.cs-results li::before { content: '✓'; color: #25d366; }
+
+.cs-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .cs-modal { padding: 24px 20px; }
+  .cs-grid { grid-template-columns: 1fr; }
+}
