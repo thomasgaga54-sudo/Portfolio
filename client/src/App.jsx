@@ -8,10 +8,10 @@ const fallbackProjects = [
     title: "Agro E-commerce Website",
     description: "A responsive agriculture e-commerce platform showcasing farm produce and vendor services.",
     tags: ["React", "Node.js", "Express", "MongoDB", "E-commerce"],
-    image: "/Screenshot_20260714-201132.jpg",
+    image: "/main.jpg",
     gallery: [
-      { url: "/Screenshot_20260714-201132.jpg", caption: "Agro platform screenshot" },
-      { url: "/Screenshot_20260714-201259.jpg", caption: "Agro platform view" }
+      { url: "/screenshot.jpg", caption: "Agro platform screenshot" },
+      { url: "/view.jpg", caption: "Agro platform view" }
     ],
     github: "https://github.com/gaga477",
     live: "https://example.com",
