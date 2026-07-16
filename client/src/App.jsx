@@ -50,12 +50,12 @@ const fallbackProjects = [
     title: "Zunny Mini Mart",
     description: "A modern full-stack mini mart and grocery e-commerce platform with product management, shopping cart, secure checkout, customer authentication, inventory tracking, and responsive mobile-first design.",
     tags: ["React", "Node.js", "Express", "MongoDB", "Paystack API", "JWT Auth"],
-    image: "/Screenshot_20260714-201259.jpg",
+    image: "/zunnymain.jpg",
     gallery: [
-      { url: "/Screenshot_20260714-201259.jpg", caption: "Zunny Mini Mart storefront" },
-      { url: "https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=400&h=240&fit=crop", caption: "Mobile shopping experience" },
-      { url: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=400&h=240&fit=crop", caption: "Cart and checkout flow" },
-      { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=240&fit=crop", caption: "Inventory tracking dashboard" }
+      { url: "/zunny.jpg", caption: "Zunny Mini Mart storefront" },
+      { url: "/mobile.jpg", caption: "Mobile shopping experience" },
+      { url: "/cart.png", caption: "Cart and checkout flow" },
+      { url: "/adminpanel.png", caption: "Inventory tracking dashboard" }
     ],
     github: "https://github.com/gaga477",
     live: "https://example.com",
