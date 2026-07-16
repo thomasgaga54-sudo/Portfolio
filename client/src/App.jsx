@@ -54,7 +54,7 @@ const fallbackProjects = [
     gallery: [
       { url: "/zunny.jpg", caption: "Zunny Mini Mart storefront" },
       { url: "/mobile.jpg", caption: "Mobile shopping experience" },
-      { url: "/cart.png", caption: "Cart and checkout flow" },
+      { url: "/cart.jpg", caption: "Cart and checkout flow" },
       { url: "/adminpanel.png", caption: "Inventory tracking dashboard" }
     ],
     github: "https://github.com/gaga477",
