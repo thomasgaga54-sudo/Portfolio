@@ -90,6 +90,50 @@ const fallbackProjects = [
       challenges: ["Built a visually appealing UI matching the brand identity", "Integrated Paystack for seamless payments", "Implemented admin inventory controls", "Optimised product image delivery"],
       results: ["Professional online presence for the brand", "Seamless payment experience", "Easy inventory management", "Mobile-optimised shopping"]
     }
+  },
+  {
+    id: 6,
+    title: "AI-Powered Cryptocurrency Market Analysis Platform",
+    description: "An intelligent crypto analytics platform that leverages real-time market data, technical indicators, and AI-driven insights to help traders make informed decisions.",
+    tags: ["React", "Node.js", "Express", "REST APIs", "AI/ML", "WebSocket", "Chart.js", "CoinGecko API"],
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=340&fit=crop",
+    gallery: [
+      { url: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=400&h=240&fit=crop", caption: "Real-time market dashboard" },
+      { url: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=240&fit=crop", caption: "AI trading insights" },
+      { url: "https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=400&h=240&fit=crop", caption: "Technical indicator charts" },
+      { url: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=400&h=240&fit=crop", caption: "Portfolio analysis" }
+    ],
+    github: "https://github.com/gaga477",
+    live: "https://example.com",
+    caseStudy: {
+      overview: "An AI-powered cryptocurrency market analysis platform that processes real-time market data and applies technical indicators to generate actionable trading insights, helping traders navigate volatile crypto markets with confidence.",
+      problem: "Cryptocurrency traders struggle to process the enormous volume of real-time market data across hundreds of coins, identify meaningful patterns, and make timely trading decisions without advanced analytical tools.",
+      solution: "Built a full-stack platform integrating the CoinGecko API for real-time market data, implementing technical indicators (RSI, MACD, Bollinger Bands), and using AI algorithms to generate buy/sell signals and market trend analysis.",
+      features: [
+        "Real-time Price Tracking",
+        "AI-Generated Trading Signals",
+        "Technical Indicator Analysis (RSI, MACD, Bollinger Bands)",
+        "Interactive Candlestick Charts",
+        "Portfolio Performance Tracking",
+        "Market Sentiment Analysis",
+        "Price Alert Notifications",
+        "Multi-Coin Comparison Dashboard"
+      ],
+      challenges: [
+        "Integrated CoinGecko API with WebSocket for live price feeds",
+        "Implemented complex technical indicator algorithms",
+        "Optimised chart rendering for large datasets",
+        "Built AI signal generation with accuracy validation",
+        "Handled API rate limiting and data caching"
+      ],
+      results: [
+        "Real-time data updates under 1 second",
+        "Actionable AI insights for 500+ cryptocurrencies",
+        "Interactive charts with zoom and time-range filters",
+        "Responsive across desktop and mobile",
+        "Reduced decision-making time for traders"
+      ]
+    }
   }
 ];
 
