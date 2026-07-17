@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReviewsSection from "./ReviewsSection";
 import MusicPlayer from "./MusicPlayer";
+import CookieConsent from "./CookieConsent";
 
 const fallbackProjects = [
   {
@@ -303,6 +304,7 @@ export default function App() {
   return (
     <>
       <MusicPlayer />
+      <CookieConsent />
       {lightbox && (
         <div className="lightbox" onClick={() => setLightbox(null)}>
           <button className="lightbox-close">✕</button>
@@ -417,7 +419,11 @@ export default function App() {
       </section>
 
       <footer>
-        <p>© {new Date().getFullYear()} Ogaga Ejairu. Built with React & Node.js</p>
+        <p>© {new Date().getFullYear()} Ogaga Ejairu. Built with React &amp; Node.js</p>
+        <button className="footer-policy-btn" onClick={() => {
+          const evt = new CustomEvent("open-privacy-policy");
+          window.dispatchEvent(evt);
+        }}>Privacy &amp; Cookie Policy</button>
       </footer>
     </>
   );
