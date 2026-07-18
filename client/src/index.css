@@ -897,47 +897,91 @@ footer {
 }
 
 /* ── MUSIC PLAYER ────────────────────────────────────────────────────────── */
-.music-btn {
+.music-player {
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 999;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(17,17,17,0.92);
+  gap: 6px;
+  background: rgba(17,17,17,0.95);
   border: 1px solid #1e1e1e;
   border-radius: 999px;
-  padding: 10px 18px 10px 14px;
-  color: #f0f0f0;
-  font-size: 0.82rem;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer;
+  padding: 8px 14px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: border-color 0.2s, transform 0.2s, background 0.2s;
   box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: border-color 0.2s, transform 0.2s;
 }
 
-.music-btn:hover {
-  border-color: #00d4ff55;
-  background: rgba(0,212,255,0.08);
+.music-player:hover {
+  border-color: #00d4ff33;
   transform: translateY(-2px);
 }
 
-.music-btn.playing {
-  border-color: #00d4ff44;
+.music-toggle-btn {
+  background: #00d4ff;
+  color: #0a0a0a;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.music-toggle-btn:hover { background: #00b8d9; }
+
+.music-nav-btn {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.music-nav-btn:hover { color: #00d4ff; }
+
+.music-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 160px;
 }
 
-.music-icon { font-size: 1.1rem; line-height: 1; }
+.music-icon-small { font-size: 0.85rem; flex-shrink: 0; }
 
-.music-label { letter-spacing: 0.5px; color: #aaa; }
+.music-track-name {
+  font-size: 0.72rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+  text-transform: capitalize;
+}
 
-.music-btn:hover .music-label { color: #00d4ff; }
+.music-track-count {
+  font-size: 0.68rem;
+  color: #444;
+  flex-shrink: 0;
+}
+
+/* Keep old .music-btn in case referenced elsewhere */
+.music-btn { display: none; }
+.music-label { display: none; }
 
 @media (max-width: 480px) {
-  .music-btn { bottom: 16px; right: 16px; padding: 10px 14px; }
-  .music-label { display: none; }
+  .music-player { bottom: 16px; right: 16px; padding: 8px 10px; }
+  .music-info { display: none; }
 }
 
 /* ── CASE STUDY MODAL ───────────────────────────────────────────────────── */
