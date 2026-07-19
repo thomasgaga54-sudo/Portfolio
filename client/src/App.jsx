@@ -325,7 +325,7 @@ export default function App() {
 
       <div className="hero">
         <div className="hero-text">
-          <h1>Hi, I'm <span>Gaga Ejairu (Paloksy)</span></h1>
+          <h1>Hi, I'm <span>Gaga Ejairu (Palosky)</span></h1>
           <p>Full Stack Software Engineer building secure, scalable web applications with React & Node.js</p>
           <div className="hero-btns">
             <a href="#projects" className="btn btn-primary">View Projects</a>
