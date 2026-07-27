@@ -87,6 +87,10 @@ client/build/
 client/dist/
 dist/
 
+# Large media files — upload via GitHub web UI instead
+client/public/music/track*.mp3
+client/public/music/background.mp3
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js

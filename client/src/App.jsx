@@ -6,7 +6,7 @@ import CookieConsent from "./CookieConsent";
 const fallbackProjects = [
   {
     id: 1,
-    title: "Agro E-commerce Website",
+    title: "Helen Motherland Agro Export",
     description: "A responsive agriculture e-commerce platform showcasing farm produce and vendor services.",
     tags: ["React", "Node.js", "Express", "MongoDB", "E-commerce"],
     image: "/main.jpg",
@@ -15,7 +15,7 @@ const fallbackProjects = [
       { url: "/view.jpg", caption: "Agro platform view" }
     ],
     github: "https://github.com/gaga477",
-    live: "https://example.com",
+    live: "https://www.helenmotherlandagroxport.shop/",
     caseStudy: {
       overview: "Helen Motherland Agro is a full-stack agricultural e-commerce platform that connects farmers with buyers, enabling online sales of fresh farm produce and vendor services.",
       problem: "Farmers and agricultural vendors lacked a digital platform to reach wider markets, manage product listings, and accept online payments securely.",
