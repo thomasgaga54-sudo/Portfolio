@@ -59,7 +59,7 @@ const fallbackProjects = [
       { url: "/adminpanel.png", caption: "Inventory tracking dashboard" }
     ],
     github: "https://github.com/gaga477",
-    live: "https://example.com",
+    live: "https://www.zunnyminimart.shop/login.html",
     caseStudy: {
       overview: "Zunny Mini Mart is a complete grocery e-commerce platform that enables customers to shop online while allowing administrators to manage inventory, orders, and payments.",
       problem: "Small businesses often struggle with inventory tracking, online payments, and managing customer orders efficiently.",
