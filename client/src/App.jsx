@@ -28,7 +28,7 @@ const fallbackProjects = [
   {
     id: 2,
     title: "Green Earth Initiative",
-    description: "An environmental impact portal for sustainability programs, volunteering, and green campaigns.",
+    description: "An environmental impact portal for sustainability programs, volunteering, and green campaigns connecting communities to eco-friendly actions.",
     tags: ["React", "Node.js", "Express", "MongoDB", "Sustainability"],
     image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=340&fit=crop",
     gallery: [
@@ -36,7 +36,7 @@ const fallbackProjects = [
       { url: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=240&fit=crop", caption: "Eco-friendly initiatives" }
     ],
     github: "https://github.com/gaga477",
-    live: "https://example.com",
+    live: "https://www.greenearthinitiative.online",
     caseStudy: {
       overview: "Green Earth Initiative is an environmental impact portal designed to promote sustainability programs, coordinate volunteers, and run green campaigns across communities.",
       problem: "Environmental organisations struggled to coordinate volunteers, track campaign impact, and engage communities through a unified digital platform.",
