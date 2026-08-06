@@ -228,13 +228,6 @@ function ProjectCard({ p, onPhotoClick }) {
 }
 
 export default function App() {
-  const summaryParagraphs = [
-    "Results-driven Full Stack Software Engineer with expertise in designing, developing, deploying, and maintaining secure, scalable web applications using JavaScript, React, Node.js, Express.js, MongoDB, TypeScript, and REST APIs. Proven experience building end-to-end business solutions, including Zunny Mini Mart, a full-stack inventory and POS management system; Helen Motherland Agro, an agricultural e-commerce platform with secure authentication, shopping cart, and online payment integration; and an AI-powered Cryptocurrency Market Analysis Platform that leverages real-time market data and technical indicators to generate actionable trading insights.",
-    "Experienced in architecting responsive front-end interfaces, developing robust back-end services, designing optimized database structures, integrating third-party APIs, implementing secure authentication (JWT/Firebase), and deploying cloud-based applications. Adept at writing clean, maintainable code, troubleshooting complex technical challenges, and delivering high-performance software using Agile methodologies and modern development best practices.",
-    "Backed by a foundation in Computer Engineering and professional experience in engineering project management, bringing a unique combination of software development expertise, analytical thinking, and problem-solving skills to build innovative digital solutions that improve operational efficiency and user experience."
-  ];
-
-  const skills = ["React", "Node.js", "Express", "MongoDB", "JavaScript", "TypeScript", "REST APIs", "JWT Auth", "Firebase", "Git", "CSS", "Agile"];
   const [projects, setProjects] = useState(fallbackProjects);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
@@ -392,7 +385,7 @@ export default function App() {
             </form>
           </div>
           <div className="contact-image">
-            <img src="/tech1.png" alt="Technology" />
+            <img src="/tech1.jpg" alt="Technology" />
           </div>
         </div>
       </section>
