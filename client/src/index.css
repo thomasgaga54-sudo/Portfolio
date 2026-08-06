@@ -287,8 +287,9 @@ section h2::after {
 
 .project-card-cover {
   width: 100%;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
@@ -329,6 +330,7 @@ section h2::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform 0.2s;
 }
