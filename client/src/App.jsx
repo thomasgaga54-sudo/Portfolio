@@ -28,22 +28,24 @@ const fallbackProjects = [
   {
     id: 2,
     title: "Green Earth Initiative",
-    description: "An environmental impact portal for sustainability programs, volunteering, and green campaigns connecting communities to eco-friendly actions.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Sustainability"],
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=340&fit=crop",
+    description: "An eco gamification platform where users complete environmental tasks, earn points, climb leaderboards, and redeem rewards — turning green actions into real impact.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Gamification", "Sustainability"],
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=340&fit=crop",
     gallery: [
-      { url: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&h=240&fit=crop", caption: "Community tree planting" },
-      { url: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=240&fit=crop", caption: "Eco-friendly initiatives" }
+      { url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=240&fit=crop", caption: "Eco tasks and green actions" },
+      { url: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=400&h=240&fit=crop", caption: "Leaderboard and achievements" },
+      { url: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=240&fit=crop", caption: "Tree planting missions" },
+      { url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=240&fit=crop", caption: "Rewards and vouchers" }
     ],
     github: "https://github.com/gaga477",
     live: "https://www.greenearthinitiative.online",
     caseStudy: {
-      overview: "Green Earth Initiative is an environmental impact portal designed to promote sustainability programs, coordinate volunteers, and run green campaigns across communities.",
-      problem: "Environmental organisations struggled to coordinate volunteers, track campaign impact, and engage communities through a unified digital platform.",
-      solution: "Developed a full-stack portal with React and Node.js featuring campaign management, volunteer registration, impact tracking, and community engagement tools.",
-      features: ["Campaign Management", "Volunteer Registration", "Impact Dashboard", "Community Forums", "Event Scheduling", "Donation Tracking", "Responsive Design"],
-      challenges: ["Designed intuitive dashboards for non-technical users", "Built real-time impact metrics", "Managed complex relational data in MongoDB", "Ensured accessibility across devices"],
-      results: ["Increased volunteer engagement", "Transparent impact reporting", "Streamlined campaign coordination", "Accessible on all devices"]
+      overview: "Green Earth Initiative is an eco gamification platform that motivates users to take real environmental actions by completing green tasks, earning points, climbing leaderboards, and redeeming rewards — making sustainability fun and measurable.",
+      problem: "People want to help the environment but struggle to stay motivated and track their real-world impact without clear incentives or community engagement.",
+      solution: "Built a full-stack gamification platform with React and Node.js featuring eco task completion, a points system, community leaderboard, achievement levels, and a rewards redemption system.",
+      features: ["User Registration & Login", "Eco Task Completion", "Points & Rewards System", "Community Leaderboard", "Achievement Levels", "Voucher Redemption", "Impact Dashboard", "Responsive Design"],
+      challenges: ["Designed an engaging gamification loop to drive user retention", "Built real-time leaderboard with MongoDB aggregation", "Implemented secure reward redemption system", "Optimised task tracking for thousands of users"],
+      results: ["12,400+ members on the platform", "3,200+ eco tasks completed", "850+ trees planted by community", "Highly engaging gamified experience"]
     }
   },
   {
