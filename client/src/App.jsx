@@ -72,29 +72,6 @@ const fallbackProjects = [
     }
   },
   {
-    id: 3,
-    title: "Skincare Store",
-    description: "A modern e-commerce platform for selling skincare products with a focus on natural ingredients and sustainable practices.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Paystack API", "JWT Auth"],
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600&h=340&fit=crop",
-    gallery: [
-      { url: "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=400&h=240&fit=crop", caption: "Beauty product showcase" },
-      { url: "https://images.unsplash.com/photo-1579113800032-c38bd7635818?w=400&h=240&fit=crop", caption: "Clean, minimal product pages" },
-      { url: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=240&fit=crop", caption: "Secure checkout process" },
-      { url: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=400&h=240&fit=crop", caption: "Inventory and order tracking" }
-    ],
-    github: "https://github.com/gaga477",
-    live: "https://example.com",
-    caseStudy: {
-      overview: "A modern skincare e-commerce platform built for a beauty brand focused on natural ingredients, enabling customers to browse, purchase, and track skincare products online.",
-      problem: "The client needed a professional online store to sell skincare products, accept payments, and manage inventory without relying on generic marketplace platforms.",
-      solution: "Developed a full-stack e-commerce solution with React frontend, Node.js/Express backend, MongoDB database, JWT authentication, and Paystack payment integration.",
-      features: ["Product Catalogue", "User Authentication", "Shopping Cart & Wishlist", "Paystack Checkout", "Order Management", "Admin Dashboard", "Inventory Tracking", "Responsive Design"],
-      challenges: ["Built a visually appealing UI matching the brand identity", "Integrated Paystack for seamless payments", "Implemented admin inventory controls", "Optimised product image delivery"],
-      results: ["Professional online presence for the brand", "Seamless payment experience", "Easy inventory management", "Mobile-optimised shopping"]
-    }
-  },
-  {
     id: 6,
     title: "AI-Powered Cryptocurrency Market Analysis Platform",
     description: "An intelligent crypto analytics platform that leverages real-time market data, technical indicators, and AI-driven insights to help traders make informed decisions.",
